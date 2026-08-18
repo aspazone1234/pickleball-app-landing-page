@@ -1,0 +1,177 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #f8f9fa;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.heading {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 600;
+}
+
+::selection {
+    background: #e63946;
+    color: #fff;
+}
+
+.chapter-num {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+}
+
+.pill-btn {
+    @apply rounded-full font-bold inline-flex items-center justify-center gap-2 transition-all duration-300;
+}
+.pill-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #0f172a;
+}
+
+.court-grid {
+    background-color: #f8f9fa;
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+}
+
+.noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.pickleball {
+    border-radius: 9999px;
+    background:
+        radial-gradient(circle at 28% 30%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 62% 22%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 78% 55%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 45% 62%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 22% 70%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 58% 85%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
+        radial-gradient(circle at 30% 25%, #f25c5c, #e63946 60%, #c62b38);
+    box-shadow: inset -18px -22px 48px rgba(15, 23, 42, 0.28), 0 24px 60px rgba(230, 57, 70, 0.3);
+}
+
+.phone-frame {
+    width: 210px;
+    height: 420px;
+    border-radius: 2rem;
+    background: #0f172a;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.28);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .phone-frame {
+    transform: translateY(-10px) rotate(0deg) !important;
+}
+.phone-notch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 14px;
+    background: #0f172a;
+    border-radius: 9999px;
+    z-index: 10;
+}
+
+.insta-gradient {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

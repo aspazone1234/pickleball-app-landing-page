@@ -1,0 +1,126 @@
+{
+  "project_name": "AP Pickleball Club",
+  "theme": "Light theme (with High Contrast Navy/White and Red Accents)",
+  "typography": {
+    "fonts": [
+      {
+        "family": "'Clash Display', sans-serif",
+        "usage": "Headings (H1, H2, H3) and large typographic hero elements",
+        "weights": ["400", "600", "700"],
+        "import": "@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,600,700&display=swap');"
+      },
+      {
+        "family": "'Manrope', sans-serif",
+        "usage": "Body, subtitles, small labels, UI elements",
+        "weights": ["400", "500", "600"],
+        "import": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');"
+      }
+    ],
+    "headings": {
+      "H1": "font-['Clash_Display'] text-5xl sm:text-7xl tracking-tighter uppercase font-bold text-[#0F172A] leading-[0.9]",
+      "H2": "font-['Clash_Display'] text-4xl sm:text-5xl tracking-tight uppercase font-semibold text-[#0F172A]",
+      "H3": "font-['Clash_Display'] text-2xl sm:text-3xl tracking-tight font-semibold text-[#0F172A]"
+    },
+    "body": "font-['Manrope'] text-base leading-relaxed text-[#475569]"
+  },
+  "colors": {
+    "primary": "#0F172A",
+    "secondary": "#E63946",
+    "accent": "#8ECAE6",
+    "accent_yellow": "#E9C46A",
+    "background": "#F8F9FA",
+    "surface": "#FFFFFF",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569"
+  },
+  "visual_enhancers": {
+    "borders": "1px solid border-[#0F172A]/10",
+    "shadows": "shadow-[0_8px_30px_rgb(15,23,42,0.04)]",
+    "radius": "rounded-2xl for cards, rounded-full for pill buttons",
+    "textures": "Subtle noise overlay on dark sections",
+    "buttons": "Red pill buttons (bg-[#E63946] text-white rounded-full px-8 py-3 font-semibold hover:-translate-y-1 transition-transform) and Navy buttons (bg-[#0F172A] text-white)"
+  },
+  "grids_and_layouts": {
+    "hero": "Full height 100vh with kinetic masked line-by-line text reveal, overlapping 3D/parallax image elements",
+    "bento": "Asymmetrical tetris grid for Media Library (col-span-12 md:col-span-8, md:col-span-4 mix) with gap-6",
+    "spacing": "Generous spacing: py-24 or py-32 for sections to allow breathing room",
+    "general": "w-full max-w-7xl mx-auto px-6"
+  },
+  "motion_and_interactions": {
+    "hero_reveal": "Framer motion line-by-line text reveal on load (staggered). Wrap each line in an overflow-hidden div and animate y from 100% to 0.",
+    "scroll": "Lenis smooth scroll integration (mandatory for Awwwards feel).",
+    "parallax": "Subtle parallax on hero background and media images using Framer Motion useScroll and useTransform.",
+    "hover": "Image scale-up on hover (scale 1.05) inside overflow-hidden container, pill buttons transform translate-y-[-2px] with shadow increase.",
+    "marquee": "Slow editorial marquee using react-fast-marquee for manifesto or club stats."
+  },
+  "component_instructions": {
+    "navbar": "Sticky, glassmorphism backdrop-blur-xl bg-white/80 border-b border-[#0F172A]/10, navy blue logo, red pill CTA, z-50.",
+    "hero": "Awwwards Site-of-the-Day level. Large kinetic typography 'AP PICKLEBALL CLUB' with masked reveal. Subtle parallax hero moment with pickleball court/action images. Numbered manifesto chapters (e.g., 01 THE COURT).",
+    "google_reviews": "Static review cards with 5-star icons, user avatars, text. 'See more on Google' button in red pill style.",
+    "booking_section": "3 ways to book: Mobile App (with App Store/Play Store badges), Website, WhatsApp. Use a phone mockup image. Red pill buttons with navy headline. Side-by-side layout (text left, mockup right).",
+    "branches": "Two branches (AP Club Thaltej Ahmedabad & AP Club Gandhinagar). Display mock address/directions. Clean card layout with 'Get Directions' buttons.",
+    "instagram_media": "Curated static image grid combining @apclubthaltej and @apclubgandhinagar. Bento-style masonry or asymmetric grid with hover effects. Combine images and 'videos' (use play icon overlays on some images).",
+    "other_ventures": "'Bollywood Vibes' (Dome Party Venue) and 'TCD Cafe'. Side-by-side elegant cards or alternating full-width rows with high-quality images and elegant descriptions.",
+    "footer": "Large footer with 'Let's Play' massive text, contact info, dark background (bg-[#0F172A]) with white text."
+  },
+  "image_urls": {
+    "logo": {
+      "url": "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/3qdtclzn_Screenshot%202026-08-16%20203704.png",
+      "description": "AP Pickleball Club Logo provided by user (use in Nav and Footer)"
+    },
+    "hero_parallax": {
+      "url": "https://images.pexels.com/photos/30864598/pexels-photo-30864598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Pickleball athlete outdoors, used for hero parallax or intro"
+    },
+    "booking_mockup": {
+      "url": "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/n72uhah5_Screenshot%202026-08-17%20142200.png",
+      "description": "User provided reference for 3 Ways to Book (use as content reference or mockup)"
+    },
+    "media_library_1": {
+      "url": "https://images.unsplash.com/photo-1711996151738-657bd95b7cdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwzfHxwaWNrbGViYWxsJTIwY291cnQlMjBhY3Rpb258ZW58MHx8fHwxNzg3MDMyODE3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Pickleball on court (Instagram grid)"
+    },
+    "media_library_2": {
+      "url": "https://images.unsplash.com/photo-1737476997205-b3336182f215?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwyfHxwaWNrbGViYWxsJTIwbGlmZXN0eWxlfGVufDB8fHx8MTc4NzAzMjgxN3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Man holding tennis/pickleball racket (Instagram grid)"
+    },
+    "media_library_3": {
+      "url": "https://images.pexels.com/photos/32975182/pexels-photo-32975182.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Woman playing pickleball (Instagram grid)"
+    },
+    "media_library_4": {
+      "url": "https://images.pexels.com/photos/36513707/pexels-photo-36513707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Colorful pickleball paddles (Instagram grid)"
+    },
+    "bollywood_vibes": {
+      "url": "https://images.pexels.com/photos/37958132/pexels-photo-37958132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Bollywood Vibes Dome Party Venue"
+    },
+    "tcd_cafe": {
+      "url": "https://images.pexels.com/photos/30915537/pexels-photo-30915537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "TCD Cafe Interior"
+    }
+  },
+  "libraries": {
+    "motion": "framer-motion",
+    "scroll": "@studio-freight/lenis (or lenis)",
+    "icons": "lucide-react",
+    "marquee": "react-fast-marquee"
+  },
+  "accessibility": {
+    "contrast": "Ensure text meets minimum contrast ratios.",
+    "aria": "Include aria-labels for all links and buttons.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case (e.g., data-testid='booking-whatsapp-button')."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You MUST use HTML/Tailwind for this marketing page. Do not over-rely on Shadcn unless it's a specific interactive component like a dialog or carousel.",
+    "Import custom fonts in index.css as provided in the typography section.",
+    "Implement Lenis for smooth scrolling at the root App level to give it the requested Awwwards feel.",
+    "Avoid generic centered layouts, use asymmetrical grids and wide padding (py-24, py-32).",
+    "Ensure the hero section features a 'signature on-load masked line-by-line reveal' of the main headline using Framer Motion (e.g., wrap text lines in overflow-hidden divs and translate Y from 100% to 0).",
+    "Include numbered manifesto chapters (e.g., 01 THE COURT, 02 THE COMMUNITY) in the layout.",
+    "Do not use transparent header without a backdrop-blur. Make the header sticky.",
+    "For the '3 Ways to Book' section, strictly follow the reference: red pill buttons, navy headline, and mobile mockup imagery.",
+    "NEVER use placeholder text for logos or images."
+  ]
+}
