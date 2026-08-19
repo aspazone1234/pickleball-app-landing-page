@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../components/landing/Navbar";
 import { Footer } from "../components/landing/Footer";
 import { Reveal } from "../components/landing/Reveal";
+import { ApClubTag } from "../components/landing/ApClubTag";
 import { ASSETS, CONTACT } from "../data/content";
 
 const HIGHLIGHTS = [
@@ -53,6 +54,9 @@ export default function TcdCafePage() {
                 </a>
               </div>
             </Reveal>
+            <div className="mt-8">
+              <ApClubTag variant="light" delay={0.4} />
+            </div>
           </div>
           <Reveal delay={0.25}>
             <div className="relative">

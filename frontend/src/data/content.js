@@ -1,6 +1,7 @@
 export const ASSETS = {
   logo: "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/3qdtclzn_Screenshot%202026-08-16%20203704.png",
   logoBadge: "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/uxxcl2er_Adobe%20Express%20-%20file.png",
+  apClubLogo: "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/nmmybw0m_AP%20Club%20-%20All%20Logo%20%286%29.png",
   hero: "https://images.pexels.com/photos/30864598/pexels-photo-30864598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1200",
   thaltejCourts: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/4459be5a3ee6c10b48643e62f15f0f55e17d3fa1a4897a6d5fa060a690754948.jpeg",
   gandhinagarCourts: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/b3558e6c92a53bdfbf529383847a0b2d5f125313f0c2cde60f68b46daa0f82a2.jpeg",

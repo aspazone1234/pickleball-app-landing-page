@@ -46,6 +46,14 @@ Premium, Awwwards-level website for 'AP Pickleball Club' (Gujarat, 2 branches: T
 - Navbar: small Contact Us + Book a Court pills always visible on mobile top bar alongside hamburger
 - Decorative mini pickleballs (.ball-spin) + mini paddles sprinkled in Reviews, Branches, Booking, Instagram, Ventures, Footer
 
+### Session 4 (Jun 2026) — parent-brand branding, verified via desktop screenshots
+- Hero: main H1 is now "AP Pickleball Club" (red "Club"); old "Where Gujarat comes to Dink, Drive & Smash." demoted to sub-headline
+- New `ApClubTag.jsx` (light/dark variants): rounded pill with AP Club logo + "A venture of / AP Club · Endless Experiences" — placed in Hero, Bollywood Vibes header, TCD Cafe header
+- `ASSETS.apClubLogo` added in content.js (user-supplied AP Club logo)
+- Footer big type changed from "Let's Play." → AP Club logo + "AP CLUB." + tagline "Endless Experiences"
+- Navbar section label "Media" → "Social"
+- Floating sticky WhatsApp button removed from all pages (component still exists in Doodles.jsx, unused)
+
 ## Known Notes
 - Instagram profile cards intentionally show NO follower/post counts (user request, session 3)
 - Download Menu / Party Packages buttons open WhatsApp with prefilled text (user has no PDFs yet — swap to real files later)

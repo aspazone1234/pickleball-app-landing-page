@@ -9,9 +9,18 @@ export const Footer = () => (
     <MiniBall className="absolute top-16 right-[6%] w-12 h-12 sm:w-16 sm:h-16 opacity-60" />
     <div className="max-w-7xl mx-auto px-6 relative">
       <Reveal>
-        <h2 className="heading uppercase text-white leading-[0.85] tracking-tighter text-[16vw] sm:text-[12vw] lg:text-[10rem] select-none">
-          Let's <span className="text-[#E63946]">Play.</span>
-        </h2>
+        <div className="flex items-end gap-5 sm:gap-8">
+          <img src={ASSETS.apClubLogo} alt="AP Club logo" data-testid="footer-apclub-logo"
+            className="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-2xl object-cover shrink-0 ring-1 ring-white/15 mb-2 sm:mb-4" />
+          <div>
+            <h2 className="heading uppercase text-white leading-[0.85] tracking-tighter text-[15vw] sm:text-[11vw] lg:text-[9rem] select-none">
+              AP <span className="text-[#E63946]">Club.</span>
+            </h2>
+            <p data-testid="footer-apclub-tagline" className="heading uppercase text-[#8ECAE6] tracking-[0.2em] text-xs sm:text-lg mt-2">
+              Endless Experiences
+            </p>
+          </div>
+        </div>
       </Reveal>
 
       <div className="grid md:grid-cols-4 gap-10 mt-16 border-t border-white/10 pt-12">

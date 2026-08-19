@@ -14,7 +14,6 @@ import { Footer } from "./components/landing/Footer";
 import ContactPage from "./pages/ContactPage";
 import BollywoodVibesPage from "./pages/BollywoodVibesPage";
 import TcdCafePage from "./pages/TcdCafePage";
-import { FloatingWhatsApp } from "./components/landing/Doodles";
 
 const Home = () => (
   <div data-testid="home-page">
@@ -85,7 +84,6 @@ function App() {
         <Route path="/bollywood-vibes" element={<BollywoodVibesPage />} />
         <Route path="/tcd-cafe" element={<TcdCafePage />} />
       </Routes>
-      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }

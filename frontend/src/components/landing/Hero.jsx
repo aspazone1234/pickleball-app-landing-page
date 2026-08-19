@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowDown, MapPin } from "lucide-react";
 import { HERO_SLIDES, CONTACT } from "../../data/content";
 import { PaddleSVG } from "./Doodles";
+import { ApClubTag } from "./ApClubTag";
 
 const lineAnim = (delay) => ({
   initial: { y: "110%" },
@@ -59,10 +60,18 @@ export const Hero = () => {
           </motion.p>
 
           <h1 className="heading uppercase leading-[0.88] tracking-tighter text-[#0F172A] text-4xl sm:text-5xl lg:text-6xl xl:text-[6.5rem]">
-            <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.45)} className="block">Where Gujarat</motion.span></span>
-            <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.58)} className="block">Comes to <span className="text-[#E63946]">Dink,</span></motion.span></span>
-            <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.71)} className="block text-outline">Drive & Smash.</motion.span></span>
+            <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.45)} className="block">AP Pickleball</motion.span></span>
+            <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.56)} className="block text-[#E63946]">Club</motion.span></span>
           </h1>
+
+          <p className="heading uppercase tracking-tight text-[#0F172A]/80 mt-4 sm:mt-6 text-xl sm:text-2xl lg:text-3xl">
+            <span className="block overflow-hidden py-0.5"><motion.span {...lineAnim(0.68)} className="block">Where Gujarat comes to <span className="text-[#E63946]">Dink,</span></motion.span></span>
+            <span className="block overflow-hidden py-0.5"><motion.span {...lineAnim(0.78)} className="block text-outline">Drive & Smash.</motion.span></span>
+          </p>
+
+          <div className="mt-6 sm:mt-7">
+            <ApClubTag variant="light" delay={0.9} />
+          </div>
 
           <div className="mt-8 sm:mt-10 flex items-center justify-between gap-3">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.8 }}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../components/landing/Navbar";
 import { Footer } from "../components/landing/Footer";
 import { Reveal } from "../components/landing/Reveal";
+import { ApClubTag } from "../components/landing/ApClubTag";
 import { ASSETS, CONTACT } from "../data/content";
 
 const OCCASIONS = [
@@ -46,6 +47,9 @@ export default function BollywoodVibesPage() {
           <Reveal delay={0.3}>
             <p className="heading text-xl sm:text-2xl text-[#FFB703] mt-8 uppercase tracking-tight">"Bollywood Vibes pe party all night!"</p>
           </Reveal>
+          <div className="mt-7">
+            <ApClubTag variant="dark" delay={0.35} />
+          </div>
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-4 mt-10">
               <a href={packagesWaUrl} target="_blank" rel="noopener noreferrer" data-testid="bv-download-packages-btn"

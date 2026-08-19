@@ -8,7 +8,7 @@ const sectionLinks = [
   { label: "Reviews", href: "#reviews" },
   { label: "Courts", href: "#branches" },
   { label: "Book", href: "#booking" },
-  { label: "Media", href: "#instagram" },
+  { label: "Social", href: "#instagram" },
 ];
 
 const pageLinks = [
