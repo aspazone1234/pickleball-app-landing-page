@@ -1,6 +1,7 @@
 import { Instagram, Play, BadgeCheck } from "lucide-react";
 import { MEDIA, INSTA_PROFILES, ASSETS } from "../../data/content";
 import { Reveal, SectionHead } from "./Reveal";
+import { MiniBall, MiniPaddle } from "./Doodles";
 
 const ProfileCard = ({ p, delay }) => (
   <Reveal delay={delay}>
@@ -17,11 +18,6 @@ const ProfileCard = ({ p, delay }) => (
             {p.handle} <BadgeCheck size={16} className="text-[#2563EB] shrink-0" />
           </p>
           <p className="text-xs text-[#94A3B8] mt-0.5">{p.city}</p>
-          <div className="flex gap-4 mt-2 text-xs text-[#475569]">
-            <span><b className="text-[#0F172A]">{p.posts}</b> posts</span>
-            <span><b className="text-[#0F172A]">{p.followers}</b> followers</span>
-            <span><b className="text-[#0F172A]">{p.following}</b> following</span>
-          </div>
         </div>
       </div>
 
@@ -45,8 +41,10 @@ const ProfileCard = ({ p, delay }) => (
 );
 
 export const InstagramMedia = () => (
-  <section id="instagram" data-testid="instagram-section" className="py-24 sm:py-32 bg-[#F8F9FA]">
-    <div className="max-w-7xl mx-auto px-6">
+  <section id="instagram" data-testid="instagram-section" className="py-24 sm:py-32 bg-[#F8F9FA] relative overflow-hidden">
+    <MiniPaddle className="absolute -top-8 right-[4%] w-20 sm:w-28 rotate-[-18deg] opacity-[0.12]" />
+    <MiniBall className="absolute bottom-24 left-[3%] w-9 h-9 sm:w-12 sm:h-12 opacity-60" />
+    <div className="max-w-7xl mx-auto px-6 relative">
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
         <SectionHead chapter="04" sub="Follow the club" title={<>Life at<br />AP Club</>} />
         <p className="text-[#475569] max-w-sm mb-14 text-sm leading-relaxed">

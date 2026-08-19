@@ -43,9 +43,9 @@ export const Navbar = () => {
       transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/85 border-b border-[#0F172A]/10"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-[72px] flex items-center justify-between gap-2">
         <Link to="/" data-testid="nav-logo-link" className="flex items-center gap-3 shrink-0" aria-label="AP Pickleball Club home" onClick={close}>
-          <img src={ASSETS.logo} alt="AP Pickleball Club logo" className="h-11 w-auto drop-shadow-sm" />
+          <img src={ASSETS.logo} alt="AP Pickleball Club logo" className="h-9 sm:h-11 w-auto drop-shadow-sm" />
           <span className="heading text-sm sm:text-base tracking-tight text-[#0F172A] uppercase hidden xl:block">
             AP Pickleball <span className="text-[#E63946]">Club</span>
           </span>
@@ -66,21 +66,19 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2.5">
-          <div className="hidden sm:flex items-center gap-2.5">
-            <Link to="/contact" data-testid="nav-contact-btn"
-              className="pill-btn bg-[#0F172A] text-white text-sm px-5 py-2.5" aria-label="Go to contact page">
-              Contact Us
-            </Link>
-            <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" data-testid="nav-book-cta"
-              className="pill-btn bg-[#E63946] text-white text-sm px-5 py-2.5" aria-label="Book a court on WhatsApp">
-              Book a Court
-            </a>
-          </div>
+        <div className="flex items-center gap-1.5 sm:gap-2.5">
+          <Link to="/contact" data-testid="nav-contact-btn"
+            className="pill-btn bg-[#0F172A] text-white text-[11px] px-3 py-2 sm:text-sm sm:px-5 sm:py-2.5" aria-label="Go to contact page">
+            Contact Us
+          </Link>
+          <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" data-testid="nav-book-cta"
+            className="pill-btn bg-[#E63946] text-white text-[11px] px-3 py-2 sm:text-sm sm:px-5 sm:py-2.5" aria-label="Book a court on WhatsApp">
+            Book a Court
+          </a>
           <button onClick={() => setOpen(!open)} data-testid="mobile-menu-button"
-            className="lg:hidden w-11 h-11 rounded-full border border-[#0F172A]/15 flex items-center justify-center text-[#0F172A] hover:bg-[#0F172A] hover:text-white transition-colors"
+            className="lg:hidden w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-full border border-[#0F172A]/15 flex items-center justify-center text-[#0F172A] hover:bg-[#0F172A] hover:text-white transition-colors"
             aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>

@@ -2,10 +2,12 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { VENTURES } from "../../data/content";
 import { Reveal, SectionHead } from "./Reveal";
+import { MiniBall } from "./Doodles";
 
 export const Ventures = () => (
-  <section id="ventures" data-testid="ventures-section" className="py-24 sm:py-32 bg-white">
-    <div className="max-w-7xl mx-auto px-6">
+  <section id="ventures" data-testid="ventures-section" className="py-24 sm:py-32 bg-white relative overflow-hidden">
+    <MiniBall className="absolute top-20 right-[7%] w-9 h-9 sm:w-12 sm:h-12 opacity-60" />
+    <div className="max-w-7xl mx-auto px-6 relative">
       <SectionHead chapter="05" sub="Beyond the courts" title={<>Our Other<br />Ventures</>} />
 
       <div className="space-y-10">

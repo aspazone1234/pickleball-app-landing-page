@@ -24,7 +24,7 @@ Premium, Awwwards-level website for 'AP Pickleball Club' (Gujarat, 2 branches: T
 ### Session 1
 - Kinetic hero, stats marquee, Google reviews, 3 Ways to Book with CSS phone mockups, branches, Instagram bento, ventures, footer
 
-### Session 2 (this fork) — tested via testing_agent (iteration_1.json, 95% pass, all issues fixed after)
+### Session 2 — tested via testing_agent (iteration_1.json, 95% pass, all issues fixed after)
 - Hero: 3-image auto slider w/ clickable dots + parallax; yellow spinning pickleball attached to navy/red paddle with "AP CLUB" text (SVG), responsive & clipped on mobile
 - Section swap: Branches (02, dark navy) now BEFORE Booking (03); chapters renumbered
 - Booking: mockups on top, headers below, 2 distinct App Store/Google Play badges, extra description text removed
@@ -35,8 +35,19 @@ Premium, Awwwards-level website for 'AP Pickleball Club' (Gujarat, 2 branches: T
 - Go-live: SEO title/meta/OG in index.html, real data everywhere, overflow-x clip on html/body (mobile fix)
 - 8 AI-generated images (courts ×2, dome ×3, cafe ×3) hosted on emergent static CDN
 
+### Session 3 — tested via testing_agent (iteration_2.json, ~98% pass; marquee 4.9→4.5 fixed after)
+- Floating WhatsApp bubble (Doodles.jsx FloatingWhatsApp) on every page via App.js
+- Paddle reshaped Zeus-style (rounded-square face, short handle) with actual transparent logo image (ASSETS.logoBadge) inside face; PaddleSVG reusable in Doodles.jsx
+- Mobile hero: paddle+ball ornament now in-flow next to CTA buttons (no text overlap); desktop keeps absolute version
+- Reviews: rating 4.5 + half-star (card + marquee), mobile responsiveness fixed (min-w-0, break-words, responsive paddings)
+- Instagram profile cards: followers/following/posts stats removed
+- Hero subtext paragraph removed; court-grid background now mimics minimal pickleball court lines (440×220 tiles, kitchen + red net lines)
+- Booking: uniform 3-row cards (pill → text → action): app badges / appickleballclub.com link / +91 88666 77822 wa.me link
+- Navbar: small Contact Us + Book a Court pills always visible on mobile top bar alongside hamburger
+- Decorative mini pickleballs (.ball-spin) + mini paddles sprinkled in Reviews, Branches, Booking, Instagram, Ventures, Footer
+
 ## Known Notes
-- Instagram follower/post counts on profile cards are stylized mock numbers
+- Instagram profile cards intentionally show NO follower/post counts (user request, session 3)
 - Download Menu / Party Packages buttons open WhatsApp with prefilled text (user has no PDFs yet — swap to real files later)
 - Google reviews are static mock cards (user-approved)
 - CSS gotcha: `.pill-btn` is defined after Tailwind utilities in index.css, so `hidden` class does NOT hide pill buttons — wrap in a hidden container instead
@@ -44,6 +55,5 @@ Premium, Awwwards-level website for 'AP Pickleball Club' (Gujarat, 2 branches: T
 ## Backlog / Next
 - P1: Real club photos/videos to replace stock/AI media
 - P1: Real PDF files for TCD menu & Bollywood Vibes party packages
-- P2: Floating quick-book action button across sections
 - P2: Tournament/league banner strip
 - P2: Real Google review screenshots

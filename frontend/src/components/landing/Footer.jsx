@@ -2,9 +2,11 @@ import { Instagram, Mail, Phone, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ASSETS, CONTACT, BRANCHES } from "../../data/content";
 import { Reveal } from "./Reveal";
+import { MiniBall } from "./Doodles";
 
 export const Footer = () => (
   <footer data-testid="footer-section" className="bg-[#0F172A] noise-overlay pt-24 pb-10 relative overflow-hidden">
+    <MiniBall className="absolute top-16 right-[6%] w-12 h-12 sm:w-16 sm:h-16 opacity-60" />
     <div className="max-w-7xl mx-auto px-6 relative">
       <Reveal>
         <h2 className="heading uppercase text-white leading-[0.85] tracking-tighter text-[16vw] sm:text-[12vw] lg:text-[10rem] select-none">

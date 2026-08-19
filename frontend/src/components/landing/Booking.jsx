@@ -1,6 +1,7 @@
 import { Smartphone, Globe, MessageCircle } from "lucide-react";
 import { BOOKING_WAYS, CONTACT, ASSETS, APP_LINKS } from "../../data/content";
 import { Reveal, SectionHead } from "./Reveal";
+import { MiniBall } from "./Doodles";
 
 const PhoneFrame = ({ children, tilt }) => (
   <div className={`phone-frame ${tilt}`}>
@@ -115,6 +116,7 @@ const hrefs = { app: APP_LINKS.appStore, website: CONTACT.websiteUrl, whatsapp: 
 export const Booking = () => (
   <section id="booking" data-testid="booking-section" className="py-24 sm:py-32 bg-white relative overflow-hidden">
     <div className="absolute inset-0 court-grid opacity-50 pointer-events-none" />
+    <MiniBall className="absolute top-16 right-[6%] w-9 h-9 sm:w-12 sm:h-12 opacity-70" />
     <div className="max-w-7xl mx-auto px-6 relative">
       <SectionHead chapter="03" sub="Booking made easy" title={<>3 Ways to<br /><span className="text-[#E63946]">Book Online</span></>} />
 
@@ -135,11 +137,17 @@ export const Booking = () => (
                     <Icon size={16} /> {w.label}
                   </a>
                   <p className="heading text-[#1A1E89] text-lg mt-3 tracking-tight">{w.sub}</p>
-                  {w.id === "app" && (
-                    <div className="flex justify-center gap-3 mt-4">
+                  {w.id === "app" ? (
+                    <div className="flex justify-center gap-3 mt-3">
                       <StoreBadge href={APP_LINKS.appStore} icon={<AppleLogo />} top="Download on the" bottom="App Store" testId="booking-appstore-badge" />
                       <StoreBadge href={APP_LINKS.playStore} icon={<PlayLogo />} top="Get it on" bottom="Google Play" testId="booking-playstore-badge" />
                     </div>
+                  ) : (
+                    <a href={hrefs[w.id]} target="_blank" rel="noopener noreferrer" data-testid={`booking-link-${w.id}`}
+                      className="inline-block mt-3 heading text-lg text-[#E63946] tracking-tight underline decoration-2 underline-offset-4 hover:text-[#0F172A] transition-colors"
+                      aria-label={`${w.label}: ${w.linkText}`}>
+                      {w.linkText}
+                    </a>
                   )}
                 </div>
               </div>

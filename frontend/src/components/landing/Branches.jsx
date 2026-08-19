@@ -2,9 +2,12 @@ import { MapPin, Clock, Navigation, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BRANCHES } from "../../data/content";
 import { Reveal, SectionHead } from "./Reveal";
+import { MiniBall, MiniPaddle } from "./Doodles";
 
 export const Branches = () => (
-  <section id="branches" data-testid="branches-section" className="py-24 sm:py-32 bg-[#0F172A] noise-overlay relative">
+  <section id="branches" data-testid="branches-section" className="py-24 sm:py-32 bg-[#0F172A] noise-overlay relative overflow-hidden">
+    <MiniPaddle light className="absolute -top-6 right-[5%] w-20 sm:w-28 rotate-[20deg] opacity-25" />
+    <MiniBall className="absolute bottom-16 left-[4%] w-9 h-9 sm:w-12 sm:h-12 opacity-50" />
     <div className="max-w-7xl mx-auto px-6 relative">
       <SectionHead light chapter="02" sub="Two arenas, one club" title={<>Find Your<br />Home Court</>} />
 

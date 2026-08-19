@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, MapPin } from "lucide-react";
 import { HERO_SLIDES, CONTACT } from "../../data/content";
+import { PaddleSVG } from "./Doodles";
 
 const lineAnim = (delay) => ({
   initial: { y: "110%" },
@@ -15,17 +16,19 @@ const MANIFESTO = [
   { num: "03", title: "The Culture", text: "Play hard, then chill at TCD Cafe or party at Bollywood Vibes." },
 ];
 
-const Paddle = () => (
-  <svg viewBox="0 0 222 340" className="w-full h-auto" aria-hidden="true">
-    <rect x="96" y="218" width="30" height="108" rx="14" fill="#0F172A" />
-    <rect x="101" y="232" width="20" height="82" rx="9" fill="#1E293B" />
-    <ellipse cx="111" cy="126" rx="98" ry="118" fill="#E63946" />
-    <ellipse cx="111" cy="126" rx="83" ry="103" fill="#0F172A" />
-    <ellipse cx="111" cy="126" rx="83" ry="103" fill="none" stroke="#8ECAE6" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3 7" />
-    <text x="111" y="116" textAnchor="middle" fill="#FFFFFF" style={{ fontFamily: "'Clash Display', sans-serif", fontWeight: 700, fontSize: "40px", letterSpacing: "0.04em" }}>AP</text>
-    <text x="111" y="152" textAnchor="middle" fill="#8ECAE6" style={{ fontFamily: "'Clash Display', sans-serif", fontWeight: 600, fontSize: "22px", letterSpacing: "0.32em" }}>CLUB</text>
-    <circle cx="111" cy="180" r="5" fill="#E63946" />
-  </svg>
+const PaddleOrnament = ({ ballClass = "" }) => (
+  <motion.div
+    animate={{ rotate: [10, 20, 10], y: [0, -10, 0] }}
+    transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+    className="relative drop-shadow-[0_30px_50px_rgba(15,23,42,0.3)]"
+  >
+    <PaddleSVG withLogo className="w-full h-auto" />
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
+      className={`pickleball absolute ${ballClass}`}
+    />
+  </motion.div>
 );
 
 export const Hero = () => {
@@ -42,26 +45,15 @@ export const Hero = () => {
 
   return (
     <section id="top" ref={ref} data-testid="hero-section" className="relative min-h-screen court-grid overflow-hidden pt-[72px]">
-      {/* Paddle + spinning pickleball ornament */}
+      {/* Desktop / tablet paddle + spinning pickleball ornament */}
       <motion.div style={{ y: ballY }} data-testid="hero-paddle"
-        className="absolute right-[-14px] top-[84px] w-[130px] opacity-80 sm:opacity-100 sm:right-6 sm:top-24 sm:w-[230px] lg:right-16 lg:w-[270px] pointer-events-none z-0"
+        className="hidden sm:block absolute right-6 top-24 w-[230px] lg:right-16 lg:w-[270px] pointer-events-none z-0"
         aria-hidden="true">
-        <motion.div
-          animate={{ rotate: [10, 20, 10], y: [0, -10, 0] }}
-          transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-          className="relative drop-shadow-[0_30px_50px_rgba(15,23,42,0.3)]"
-        >
-          <Paddle />
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
-            className="pickleball absolute -top-4 -left-8 w-16 h-16 sm:-top-7 sm:-left-14 sm:w-24 sm:h-24 lg:w-28 lg:h-28"
-          />
-        </motion.div>
+        <PaddleOrnament ballClass="-top-7 -left-14 w-24 h-24 lg:w-28 lg:h-28" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="pt-16 sm:pt-24">
+        <div className="pt-12 sm:pt-24">
           <motion.p {...lineAnim(0.35)} className="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.3em] uppercase text-[#E63946] mb-6">
             <MapPin size={14} /> Ahmedabad · Gandhinagar — Open 24×7
           </motion.p>
@@ -72,8 +64,9 @@ export const Hero = () => {
             <span className="block overflow-hidden py-1"><motion.span {...lineAnim(0.71)} className="block text-outline">Drive & Smash.</motion.span></span>
           </h1>
 
-          <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.8 }} className="flex flex-wrap gap-4">
+          <div className="mt-8 sm:mt-10 flex items-center justify-between gap-3">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.8 }}
+              className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer" data-testid="hero-book-cta"
                 className="pill-btn bg-[#E63946] text-white px-8 py-3.5" aria-label="Book your game now">
                 Book Your Game
@@ -83,14 +76,17 @@ export const Hero = () => {
                 Find a Branch
               </a>
             </motion.div>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-sm text-[#475569] max-w-xs leading-relaxed">
-              Gujarat's home of pickleball since 2021. Two arenas, 15 dedicated courts, open round the clock.
-            </motion.p>
+
+            {/* Mobile paddle + ball ornament (in-flow so it never hides behind text) */}
+            <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.1, duration: 0.9 }}
+              data-testid="hero-paddle-mobile" aria-hidden="true"
+              className="sm:hidden relative w-[130px] shrink-0 -mt-2 mr-1 pointer-events-none">
+              <PaddleOrnament ballClass="-top-4 -left-7 w-16 h-16" />
+            </motion.div>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-12 gap-6 items-end pb-20">
+        <div className="mt-14 sm:mt-16 grid grid-cols-12 gap-6 items-end pb-20">
           <motion.div
             initial={{ opacity: 0, y: 60, rotate: -2 }} animate={{ opacity: 1, y: 0, rotate: -2 }}
             transition={{ delay: 1.15, duration: 1, ease: [0.22, 1, 0.36, 1] }}

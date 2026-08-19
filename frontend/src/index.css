@@ -61,9 +61,21 @@ body {
 .court-grid {
     background-color: #f8f9fa;
     background-image:
-        linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-    background-size: 72px 72px;
+        linear-gradient(rgba(15, 23, 42, 0.08) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, transparent 152px, rgba(15, 23, 42, 0.05) 152px, rgba(15, 23, 42, 0.05) 154px, transparent 154px, transparent 286px, rgba(15, 23, 42, 0.05) 286px, rgba(15, 23, 42, 0.05) 288px, transparent 288px),
+        linear-gradient(90deg, transparent 219px, rgba(230, 57, 70, 0.09) 219px, rgba(230, 57, 70, 0.09) 221px, transparent 221px),
+        linear-gradient(transparent 109px, rgba(15, 23, 42, 0.04) 109px, rgba(15, 23, 42, 0.04) 110.5px, transparent 110.5px);
+    background-size: 440px 220px, 440px 220px, 440px 220px, 440px 220px, 440px 220px;
+}
+
+@keyframes ball-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.ball-spin {
+    animation: ball-spin 14s linear infinite;
 }
 
 .noise-overlay::before {

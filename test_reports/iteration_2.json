@@ -1,0 +1,26 @@
+{
+  "summary": "Frontend-only verification of AP Pickleball Club changes. Tested 9 request items across desktop (1920) and mobile (390) viewports on /, /contact, /bollywood-vibes, /tcd-cafe. Vast majority of requested changes verified as working. One minor inconsistency: the top scrolling marquee still contains the text '4.9\u2605 on Google' (2 occurrences) even though the Reviews card correctly shows 4.5 with a half star.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Marquee (top scrolling ribbon)", "issue": "Contains stale text '4.9\u2605 on Google' (appears twice in marquee). Reviews card was correctly updated to 4.5 with half star, but marquee copy was not updated. Creates inconsistency.", "selector": "span.heading (rfm-marquee children)", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Update the top marquee copy to say '4.5\u2605 on Google' (or remove the rating token from marquee) so it matches the Reviews card. Likely in a component that renders react-fast-marquee content."
+  ],
+  "critical_code_review_comments": [
+    "Rating is duplicated as string literals in multiple places (Reviews card + marquee). Consider extracting to a single constant (e.g., GOOGLE_RATING) to avoid future drift.",
+    "Global FloatingWhatsApp mounted in App.js inside BrowserRouter \u2014 verified single instance per route (no duplicates on subpages).",
+    "Verified all requested data-testid selectors present: floating-whatsapp-btn, hero-paddle, hero-paddle-mobile, hero-slider, hero-slide-dot-0/1/2, nav-contact-btn, nav-book-cta, mobile-menu-button, mobile-menu-panel, insta-profile-card-thaltej, insta-profile-card-gandhinagar, booking-link-website, booking-link-whatsapp, booking-appstore-badge, booking-playstore-badge."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "~98%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Verified PASS: (a) Floating WhatsApp btn (56x56, href=https://wa.me/918866677822) fixed bottom-right on all 4 routes (/, /contact, /bollywood-vibes, /tcd-cafe) \u2013 single instance each. (b) Desktop hero: hero-paddle visible top-right, contains an <svg><image/></svg> for club logo. (c) Hero subtext \"Gujarat's home of pickleball since 2021...\" REMOVED (not present in hero); note the word 'Gujarat' still appears in headline 'WHERE GUJARAT COMES TO DINK', which is intentional. (d) Mobile 390: hero-paddle-mobile rendered in-flow at x=232 y=319 w=130 h=198, NO overlap with h1 bounding box; desktop hero-paddle hidden on mobile; scrollWidth=390 (no horizontal overflow at document level). (e) Mobile navbar shows nav-contact-btn + nav-book-cta + mobile-menu-button all visible; hamburger opens mobile-menu-panel. (f) Reviews card: '4.5' present, 4 full + 1 half star. HOWEVER top marquee STILL contains '4.9\u2605 on Google' string (2x) \u2013 inconsistency to fix. (g) Instagram cards: no 'followers/following/posts' text; handles, bio, Follow btn present. (h) Booking cards: booking-link-website\u2192https://appickleballclub.com (text 'appickleballclub.com'), booking-link-whatsapp\u2192https://wa.me/918866677822 (text '+91 88666 77822'), booking-appstore-badge + booking-playstore-badge present with correct store URLs. (i) hero-slider + hero-slide-dot-0/1/2 present. (j) No page errors / pageerror events on any of the 4 routes. Lenis-related warning about non-static container is benign. The marquee elements overflow their container by design (react-fast-marquee), but page-level scrollWidth stays at 390 on mobile."
+}
