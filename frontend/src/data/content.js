@@ -1,7 +1,25 @@
 export const ASSETS = {
   logo: "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/3qdtclzn_Screenshot%202026-08-16%20203704.png",
-  bookingRef: "https://customer-assets-gfyr7b9c.emergentagent.net/job_ace-pickleball-pad/artifacts/n72uhah5_Screenshot%202026-08-17%20142200.png",
   hero: "https://images.pexels.com/photos/30864598/pexels-photo-30864598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1200",
+  thaltejCourts: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/4459be5a3ee6c10b48643e62f15f0f55e17d3fa1a4897a6d5fa060a690754948.jpeg",
+  gandhinagarCourts: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/b3558e6c92a53bdfbf529383847a0b2d5f125313f0c2cde60f68b46daa0f82a2.jpeg",
+  domeParty: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/bd6d194bf03bd33119a5cfac81b3c409077a1c448904005956d59ac6458ab8ee.jpeg",
+  djCrowd: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/e2db87d39f4891bbf92a637261bc26809aeef0bff5bfa399356fef1b535a670f.jpeg",
+  bollywoodLights: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/72f17951c457d88f404473927838552c961f4d09ad39e89f228ae14298448aae.jpeg",
+  tcdMocktails: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/a0d03be2dde74023f633723a7c277fa11d250b9d2ad88bfbc729352319164d5b.jpeg",
+  tcdInterior: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/9777babc0f26fef40ef0ad5c8272f6eb83ff67257bf76d2849584ce2c6101ea9.jpeg",
+  tcdFood: "https://static.prod-images.emergentagent.com/jobs/78bde903-14fc-43b3-9bb1-b0ee3b96cf7f/images/8e906cd742b3e935257b81e226f9f1e1b044f01ed946c4dc2df0ba510e768877.jpeg",
+};
+
+export const HERO_SLIDES = [
+  { src: ASSETS.hero, alt: "Pickleball player mid-rally at AP Pickleball Club" },
+  { src: "https://images.unsplash.com/photo-1711996151738-657bd95b7cdb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwzfHxwaWNrbGViYWxsJTIwY291cnQlMjBhY3Rpb258ZW58MHx8fHwxNzg3MDMyODE3fDA&ixlib=rb-4.1.0&q=85", alt: "Match point on the court" },
+  { src: ASSETS.thaltejCourts, alt: "AP Pickleball Club courts under lights" },
+];
+
+export const APP_LINKS = {
+  appStore: "https://apps.apple.com/in/app/ap-pickleball-club/id1669408798",
+  playStore: "https://play.google.com/store/search?q=AP%20Pickleball%20Club&c=apps",
 };
 
 export const REVIEWS = [
@@ -12,9 +30,9 @@ export const REVIEWS = [
 ];
 
 export const BOOKING_WAYS = [
-  { id: "app", label: "MOBILE APP", sub: "Download on App Store & Play Store", detail: "Book courts, join games and track your slots — all from the AP Pickleball Club app." },
-  { id: "website", label: "WEBSITE", sub: "appickleballclub.com", detail: "Pick your court, date and slot on our live availability calendar in seconds." },
-  { id: "whatsapp", label: "WHATSAPP", sub: "+91 88666 77822", detail: "Say hi on WhatsApp and book your game with a single message. Instant confirmation." },
+  { id: "app", label: "MOBILE APP", sub: "AP Pickleball Club App" },
+  { id: "website", label: "WEBSITE", sub: "appickleballclub.com" },
+  { id: "whatsapp", label: "WHATSAPP", sub: "+91 88666 77822" },
 ];
 
 export const BRANCHES = [
@@ -23,26 +41,28 @@ export const BRANCHES = [
     name: "AP Club Thaltej",
     city: "Ahmedabad",
     tag: "01 — The Original",
-    address: "Near Rajaram Bunglow, Hebatpur–Bhattipura Road, Thaltej–Shilaj, Ahmedabad, Gujarat 380059",
-    phone: "+91 98254 23650",
-    hours: "6:00 AM – 12:00 AM, All days",
-    courts: "6 Pro Courts",
+    address: "AP Pickleball Club, Near Aryaman Bunglows, Hebatpur Rd, Thaltej, Ahmedabad, Gujarat 380059",
+    phones: ["+91 95120 60060", "+91 98254 23650"],
+    hours: "Open 24 × 7",
+    courts: "9 Dedicated Courts",
+    img: ASSETS.thaltejCourts,
     insta: "@apclubthaltej",
     instaUrl: "https://www.instagram.com/apclubthaltej/",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=AP+Pickleball+Club+Thaltej+Ahmedabad",
+    mapsUrl: "https://maps.app.goo.gl/vQGMLyVJLtQAkx8z7",
   },
   {
     id: "gandhinagar",
     name: "AP Club Gandhinagar",
     city: "Gandhinagar",
     tag: "02 — The New Arena",
-    address: "Sargasan Cross Road, S.G. Highway, Gandhinagar, Gujarat 382421",
-    phone: "+91 95120 60060",
-    hours: "6:00 AM – 12:00 AM, All days",
-    courts: "4 Pro Courts",
+    address: "Infocity Club and Resort, Near Indroda Circle, Infocity, Gandhinagar, Gujarat 382007",
+    phones: ["+91 88666 77650", "+91 99982 50050"],
+    hours: "Open 24 × 7",
+    courts: "6 Dedicated Courts",
+    img: ASSETS.gandhinagarCourts,
     insta: "@apclubgandhinagar",
     instaUrl: "https://www.instagram.com/apclubgandhinagar/",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=AP+Pickleball+Club+Gandhinagar",
+    mapsUrl: "https://share.google/sEG681ljK01hiyDWp",
   },
 ];
 
@@ -54,20 +74,47 @@ export const MEDIA = [
   { src: "https://images.pexels.com/photos/30864598/pexels-photo-30864598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", handle: "@apclubthaltej", video: true, span: "md:col-span-8", label: "Night games under lights" },
 ];
 
+export const INSTA_PROFILES = [
+  {
+    id: "thaltej",
+    handle: "apclubthaltej",
+    url: "https://www.instagram.com/apclubthaltej/",
+    city: "Thaltej · Ahmedabad",
+    posts: "340",
+    followers: "12.6K",
+    following: "180",
+    bio: "Play. Train. Compete. Connect. 🏓 9 dedicated courts · Open 24×7",
+    grid: [MEDIA[0].src, ASSETS.thaltejCourts, MEDIA[2].src],
+  },
+  {
+    id: "gandhinagar",
+    handle: "apclubgandhinagar",
+    url: "https://www.instagram.com/apclubgandhinagar/",
+    city: "Infocity · Gandhinagar",
+    posts: "215",
+    followers: "8.4K",
+    following: "142",
+    bio: "The new arena 🏓 6 dedicated courts · Open 24×7 · Book on WhatsApp",
+    grid: [MEDIA[1].src, ASSETS.gandhinagarCourts, MEDIA[3].src],
+  },
+];
+
 export const VENTURES = [
   {
     name: "Bollywood Vibes",
     type: "Dome Party Venue",
     num: "01",
-    desc: "A one-of-a-kind dome party venue in Ahmedabad. Celebrations, DJ nights, private events and Bollywood-themed experiences under one spectacular dome.",
-    img: "https://images.pexels.com/photos/37958132/pexels-photo-37958132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    route: "/bollywood-vibes",
+    desc: "An immersive DJ dome where AP Club switches from game mode to party mode. Bollywood music, DJ nights, birthdays and private celebrations — party all night under one spectacular dome.",
+    img: ASSETS.domeParty,
   },
   {
     name: "TCD Cafe",
-    type: "The Cafe",
+    type: "Mocktail Bar + Cafe",
     num: "02",
-    desc: "Post-match coffee, fresh bites and good conversations. TCD Cafe is where the rallies end and the stories begin — right next to the courts.",
-    img: "https://images.pexels.com/photos/30915537/pexels-photo-30915537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    route: "/tcd-cafe",
+    desc: "Eat. Sip. Chill. Colourful mocktails, fresh bites and comfy corners — your pre-game fuel, post-match hangout and the perfect pre-party pit stop, right next to the courts.",
+    img: ASSETS.tcdInterior,
   },
 ];
 
@@ -77,5 +124,5 @@ export const CONTACT = {
   website: "appickleballclub.com",
   websiteUrl: "https://appickleballclub.com",
   email: "pickleballclub2021@gmail.com",
-  phone: "+91 98254 23650",
+  phone: "+91 95120 60060",
 };

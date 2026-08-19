@@ -1,0 +1,29 @@
+{
+  "summary": "Frontend-only E2E testing of AP Pickleball Club landing site. Verified hero (paddle ornament + auto slider + 3 dots), homepage section order (Reviews 01 → Branches 02 → Booking 03 → Instagram 04 → Ventures 05), Booking section badges, Branches photo cards + Contact Branch → /contact routing, Instagram profile cards, Navbar Contact Us + Book a Court, /contact page (all 4 phone numbers, Open 24×7, no form), /bollywood-vibes and /tcd-cafe WhatsApp CTA hrefs, cross-route section-link scroll (Reviews from /contact → /#reviews with scrollY≈1183), scroll-reset on route change (scrollY=0 after nav to /contact), footer links, and mobile hamburger menu open/close + link navigation. No console errors or page errors on any route.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Hero (mobile 390x844)", "issue": "Horizontal page overflow on mobile — documentElement.scrollWidth=464 vs innerWidth=390 (~74px overflow). Paddle+ball ornament extends beyond the right edge causing a horizontal scrollbar on mobile. Consider clipping the hero container with overflow-x-hidden or constraining paddle size/translation on <sm breakpoints.", "selector": "[data-testid=\"hero-paddle\"] / hero section", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Mobile navbar (390px)", "issues": ["Both 'Contact Us' and 'Book a Court' pill buttons render inline in the top bar next to the hamburger, making the header crowded on small screens. Spec asked for these to live inside the mobile-menu-panel only; consider hiding them from the top bar on <md so the hamburger owns those CTAs."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix mobile horizontal overflow caused by hero paddle ornament (add overflow-x:hidden to hero/root or constrain paddle transform on sm breakpoints).",
+    "Consider hiding the inline Contact Us / Book a Court pill buttons from the mobile top bar since they are already inside mobile-menu-panel."
+  ],
+  "critical_code_review_comments": [
+    "Lenis warning logged on every page: 'Please ensure that the container has a non-static position, like relative/fixed/absolute'. Add position:relative to the Lenis wrapper container to silence and ensure correct scroll offset calculation.",
+    "Mobile hero overflow indicates paddle ornament is positioned/scaled without responsive constraint — good candidate for a sm: variant."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "95%"},
+  "seed_data_creation": "None (static site)",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All requested data-testids exist and work: hero-paddle, hero-slider, hero-slide-dot-0/1/2, booking-appstore-badge (App Store URL), booking-playstore-badge (Play Store URL), branch-photo-thaltej/gandhinagar, branch-contact-thaltej (→/contact), insta-profile-card-thaltej/gandhinagar, nav-contact-btn, mobile-menu-button, mobile-menu-panel, bv-download-packages-btn (wa.me), tcd-download-menu-btn (wa.me), footer-contact-link, footer-bollywood-link, footer-tcd-link. All 4 phones present on /contact and no <form> on /contact (correct). Section order confirmed via chapter numbers in DOM. Only remaining issue is mobile horizontal overflow from paddle ornament.",
+  "rca of the issue": "Mobile overflow RCA: On 390px viewport document.scrollWidth reports 464. Hero paddle ornament (data-testid=hero-paddle) is absolutely positioned/translated to the right of the hero text and its bounding box extends past the viewport right edge. Fix: wrap hero root with overflow-x-hidden OR add a media-query/tailwind sm: variant that reduces the paddle's translateX/scale on mobile."
+}

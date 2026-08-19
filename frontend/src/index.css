@@ -13,8 +13,14 @@ html.lenis body {
     scroll-behavior: auto !important;
 }
 
+html {
+    overflow-x: clip;
+}
+
 body {
     margin: 0;
+    position: relative;
+    overflow-x: clip;
     font-family: 'Manrope', sans-serif;
     background-color: #f8f9fa;
     color: #0f172a;
@@ -72,14 +78,16 @@ body {
 .pickleball {
     border-radius: 9999px;
     background:
-        radial-gradient(circle at 28% 30%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 62% 22%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 78% 55%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 45% 62%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 22% 70%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 58% 85%, transparent 0 7%, #0f172a 7% 10%, transparent 10%),
-        radial-gradient(circle at 30% 25%, #f25c5c, #e63946 60%, #c62b38);
-    box-shadow: inset -18px -22px 48px rgba(15, 23, 42, 0.28), 0 24px 60px rgba(230, 57, 70, 0.3);
+        radial-gradient(circle at 50% 18%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 28% 30%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 72% 30%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 50% 46%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 24% 58%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 76% 58%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 38% 76%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 62% 76%, #0f172a 0 5.5%, transparent 6.5%),
+        radial-gradient(circle at 32% 26%, #f9ee7e, #ecd93f 55%, #c4b02a);
+    box-shadow: inset -14px -18px 40px rgba(15, 23, 42, 0.3), 0 20px 50px rgba(196, 176, 42, 0.4);
 }
 
 .phone-frame {
